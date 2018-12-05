@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import './page.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: new ThemeData(
-        primaryColor: Colors.white
+        primaryColor: Colors.blue
       ),
       home: new RandomWords()
     );
@@ -84,13 +85,15 @@ class RandomWordsState extends State<RandomWords> {
             context: context,
             tiles: tiles
           ).toList();
+
+          return Page();
           
-          return new Scaffold(
-            appBar: new AppBar(
-              title: new Text('Saved Suggestions'),
-            ),
-            body: new ListView(children: divided)
-          );
+          // return new Scaffold(
+          //   appBar: new AppBar(
+          //     title: new Text('Saved Suggestions'),
+          //   ),
+          //   body: new ListView(children: divided)
+          // );
         }
       )
     );
